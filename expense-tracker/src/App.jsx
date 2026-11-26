@@ -15,10 +15,13 @@ function App() {
         localStorage.setItem("expenses", JSON.stringify(expenses));
     }, [expenses]);
 
-    const visibleExpenses =
+    const visibleExpenses = (
         filter === "All"
             ? expenses
-            : expenses.filter((expense) => expense.category === filter);
+            : expenses.filter((expense) => expense.category === filter)
+    )
+        .slice()
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
     function addExpense(expense) {
         setExpenses([...expenses, expense]);
@@ -28,12 +31,24 @@ function App() {
         setExpenses(expenses.filter((expense) => expense.id !== id));
     }
 
+    function updateExpense(updated) {
+        setExpenses(
+            expenses.map((expense) =>
+                expense.id === updated.id ? updated : expense
+            )
+        );
+    }
+
     return (
         <div className="App">
             <h1>Expense Tracker</h1>
             <ExpenseForm onAdd={addExpense} />
             <FilterBar filter={filter} setFilter={setFilter} />
-            <ExpenseList expenses={visibleExpenses} onDelete={deleteExpense} />
+            <ExpenseList
+                expenses={visibleExpenses}
+                onDelete={deleteExpense}
+                onUpdate={updateExpense}
+            />
             <ExpenseSummary expenses={visibleExpenses} />
         </div>
     );

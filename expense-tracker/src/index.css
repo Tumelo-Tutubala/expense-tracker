@@ -145,3 +145,54 @@ button:hover {
         flex-direction: column;
     }
 }
+
+.ExpenseItem-edit {
+    background: #6b7280;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+.ExpenseItem-edit:hover {
+    background: #4b5563;
+}
+
+.ExpenseItem-editing {
+    flex-wrap: wrap;
+}
+
+.ExpenseItem-editing input,
+.ExpenseItem-editing select {
+    padding: 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    min-width: 0;
+}
+
+.ExpenseItem-editing input[type="text"] {
+    flex: 2 1 140px;
+}
+
+.ExpenseItem-editing input[type="number"] {
+    flex: 1 1 80px;
+}
+
+.ExpenseItem-save {
+    background: #16a34a;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+.ExpenseItem-save:hover {
+    background: #15803d;
+}
+
+.ExpenseItem-cancel {
+    background: #6b7280;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+.ExpenseItem-cancel:hover {
+    background: #4b5563;
+}

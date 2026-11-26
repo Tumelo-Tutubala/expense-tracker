@@ -1,6 +1,6 @@
 import ExpenseItem from "./ExpenseItem";
 
-function ExpenseList({ expenses, onDelete }) {
+function ExpenseList({ expenses, onDelete, onUpdate }) {
     if (expenses.length === 0) {
         return <p className="ExpenseList-empty">No expenses yet</p>;
     }
@@ -12,6 +12,7 @@ function ExpenseList({ expenses, onDelete }) {
                     key={expense.id}
                     expense={expense}
                     onDelete={onDelete}
+                    onUpdate={onUpdate}
                 />
             ))}
         </ul>
