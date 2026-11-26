@@ -196,3 +196,59 @@ button:hover {
 .ExpenseItem-cancel:hover {
     background: #4b5563;
 }
+
+.MonthlySummary {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 2px solid #e5e7eb;
+}
+
+.MonthlySummary h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.MonthlySummary-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.MonthlySummary-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0;
+}
+
+.MonthlySummary-month {
+    width: 130px;
+    flex-shrink: 0;
+}
+
+.MonthlySummary-track {
+    flex: 1;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.MonthlySummary-bar {
+    height: 100%;
+    background: #2563eb;
+    border-radius: 6px;
+}
+
+.MonthlySummary-total {
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+@media (max-width: 500px) {
+    .MonthlySummary-month {
+        width: 100px;
+    }
+}

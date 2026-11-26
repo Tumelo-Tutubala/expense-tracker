@@ -3,6 +3,7 @@ import ExpenseForm from "./components/ExpenseForm";
 import FilterBar from "./components/FilterBar";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseSummary from "./components/ExpenseSummary";
+import MonthlySummary from "./components/MonthlySummary";
 
 function App() {
     const [expenses, setExpenses] = useState(() => {
@@ -50,6 +51,7 @@ function App() {
                 onUpdate={updateExpense}
             />
             <ExpenseSummary expenses={visibleExpenses} />
+            <MonthlySummary expenses={expenses} />
         </div>
     );
 }
