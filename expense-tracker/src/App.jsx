@@ -1,17 +1,24 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseSummary from "./components/ExpenseSummary";
 import FilterBar from "./components/FilterBar";
 
 function App() {
-    const [expenses, setExpenses] = useState([]);
+    const [expenses, setExpenses] = useState(() => {
+        const saved = localStorage.getItem("expenses");
+        return saved ? JSON.parse(saved) : [];
+    });
     const [filter, setFilter] = useState("All");
 
     const visibleExpenses =
         filter === "All"
             ? expenses
             : expenses.filter((expense) => expense.category === filter);
+
+    useEffect(() => {
+        localStorage.setItem("expenses", JSON.stringify(expenses));
+    }, [expenses]);
 
     function addExpense(expense) {
         setExpenses([...expenses, expense]);
