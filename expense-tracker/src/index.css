@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* App */
+.App {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.App h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+/* ExpenseForm */
+.ExpenseForm {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.ExpenseForm input,
+.ExpenseForm select {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.ExpenseForm input[type="text"] {
+    flex: 2;
+    min-width: 0;
+}
+
+.ExpenseForm input[type="number"] {
+    flex: 1;
+    min-width: 0;
+}
+
+/* FilterBar */
+.FilterBar {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* ExpenseList */
+.ExpenseList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ExpenseList-empty {
+    text-align: center;
+    color: #6b7280;
+    padding: 24px 0;
+}
+
+/* ExpenseItem */
+.ExpenseItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.ExpenseItem-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ExpenseItem-description {
+    font-weight: 500;
+}
+
+.ExpenseItem-category {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.ExpenseItem-amount {
+    font-weight: bold;
+}
+
+.ExpenseItem-delete {
+    background: #ef4444;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+.ExpenseItem-delete:hover {
+    background: #dc2626;
+}
+
+/* ExpenseSummary */
+.ExpenseSummary {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .App {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .ExpenseForm {
+        flex-direction: column;
+    }
+}

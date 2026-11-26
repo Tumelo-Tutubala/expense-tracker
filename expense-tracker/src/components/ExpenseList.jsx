@@ -1,15 +1,20 @@
-function ExpenseList({ expenses,onDelete}) {
+import ExpenseItem from "./ExpenseItem";
+
+function ExpenseList({ expenses, onDelete }) {
+    if (expenses.length === 0) {
+        return <p className="ExpenseList-empty">No expenses yet</p>;
+    }
+
     return (
-<div className="ExpenseList">
-        <ul>
+        <ul className="ExpenseList">
             {expenses.map((expense) => (
-                <li key={expense.id}>
-                    {expense.description} - R{expense.amount.toFixed(2)} ({expense.category})
-                    <button onClick={() => onDelete(expense.id)}>Delete</button>
-                </li>
+                <ExpenseItem
+                    key={expense.id}
+                    expense={expense}
+                    onDelete={onDelete}
+                />
             ))}
         </ul>
-        </div>
     );
 }
 

@@ -22,7 +22,7 @@ function ExpenseForm({ onAdd }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="ExpenseForm" onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="Description"

@@ -1,8 +1,8 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import ExpenseForm from "./components/ExpenseForm";
+import FilterBar from "./components/FilterBar";
 import ExpenseList from "./components/ExpenseList";
 import ExpenseSummary from "./components/ExpenseSummary";
-import FilterBar from "./components/FilterBar";
 
 function App() {
     const [expenses, setExpenses] = useState(() => {
@@ -11,14 +11,14 @@ function App() {
     });
     const [filter, setFilter] = useState("All");
 
+    useEffect(() => {
+        localStorage.setItem("expenses", JSON.stringify(expenses));
+    }, [expenses]);
+
     const visibleExpenses =
         filter === "All"
             ? expenses
             : expenses.filter((expense) => expense.category === filter);
-
-    useEffect(() => {
-        localStorage.setItem("expenses", JSON.stringify(expenses));
-    }, [expenses]);
 
     function addExpense(expense) {
         setExpenses([...expenses, expense]);
@@ -29,7 +29,7 @@ function App() {
     }
 
     return (
-        <div>
+        <div className="App">
             <h1>Expense Tracker</h1>
             <ExpenseForm onAdd={addExpense} />
             <FilterBar filter={filter} setFilter={setFilter} />
