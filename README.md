@@ -4,9 +4,9 @@ A simple expense tracker built with React and Vite. Add your expenses, edit or d
 
 ## Live Demo
 
-[View the app](YOUR-VERCEL-LINK-HERE)
+[View the app](https://expense-tracker-alphatech.vercel.app/)
 
-![Expense Tracker screenshot](./screenshot.png)
+
 
 ## Features
 
